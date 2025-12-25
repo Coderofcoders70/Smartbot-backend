@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use('/api', chatRoutes);
 
-// Health check route
+// check route health
 app.get('/', (_req, res) => {
   res.json({ status: 'Backend is running' });
 });
