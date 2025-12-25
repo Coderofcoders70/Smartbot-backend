@@ -5,12 +5,12 @@ type ReasoningResult = {
 export function getSmartReasoningFallback(userMessage: string): ReasoningResult {
   const normalized = userMessage.trim().toLowerCase();
 
-  if (normalized.length < 15) {
+  if (normalized.length < 7) {
     return {
       reply:
         "Hello, How can I help you today ?",
     };
-  } else if (normalized.length < 20) {
+  } else if (normalized.length < 15) {
     return {
       reply:
       "I want to make sure I understand you correctly. Could you add a bit more context or clarify what you're looking for?"
