@@ -1,6 +1,6 @@
 import cors from 'cors';
-import express from 'express';
-import chatRoutes from './routes/chat-route'
+import express, { Request, Response } from 'express';
+import chatRoutes from './routes/chat-route';
 
 console.log('App file loaded');
 
@@ -11,8 +11,8 @@ app.use(express.json());
 
 app.use('/api', chatRoutes);
 
-// check route health
-app.get('/', (_req, res) => {
+// health check
+app.get('/', (_req: Request, res: Response) => {
   res.json({ status: 'Backend is running' });
 });
 
